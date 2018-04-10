@@ -4,7 +4,8 @@ FROM debian:9
 
 MAINTAINER Gerry-Rego Lepik <gerry@gerry.ee>
 
-RUN apt update \
+RUN dpkg --add-architecture i386 \
+    && apt update \
     && apt upgrade -y \
     && apt install -y dpkg libstdc++6 lib32stdc++6 tar curl iproute2 openssl \
     && useradd -d /home/container -m container
