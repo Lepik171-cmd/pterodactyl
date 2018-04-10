@@ -1,6 +1,6 @@
 # Based on: https://github.com/parkervcp/images/tree/samp
 
-FROM jessie
+FROM debian:jessie
 
 MAINTAINER Mark Vainomaa <mikroskeem@mikroskeem.eu>
 
