@@ -2,7 +2,7 @@
 
 FROM debian:latest
 
-MAINTAINER Mark Vainomaa <mikroskeem@mikroskeem.eu>
+MAINTAINER Gerry-Rego Lepik <gerry@gerry.ee>
 
 RUN apt-get update \
     && apt-get upgrade -y \
