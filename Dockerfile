@@ -9,9 +9,9 @@ RUN apt-get update \
     && apt-get install -y libstdc++6 tar curl \
     && useradd -d /home/container -m container
 
-RUN curl -O http://snapshot.debian.org/archive/debian/20110406T213352Z/pool/main/o/openssl098/libssl0.9.8_0.9.8o-7_i386.deb \
-    && dpkg -i libssl0.9.8_0.9.8o-7_i386.deb \
-    && rm libssl0.9.8_0.9.8o-7_i386.deb
+RUN curl -O http://snapshot.debian.org/archive/debian/20110406T213352Z/pool/main/o/openssl098/libssl0.9.8_0.9.8o-7_amd64.deb \
+    && dpkg -i libssl0.9.8_0.9.8o-7_amd64.deb \
+    && rm libssl0.9.8_0.9.8o-7_amd64.deb
 
 USER container
 ENV USER=container HOME=/home/container
