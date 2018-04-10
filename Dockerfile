@@ -4,8 +4,7 @@ FROM debian:latest
 
 MAINTAINER Gerry-Rego Lepik <gerry@gerry.ee>
 
-RUN echo "deb [arch=amd64,i386] http://uk.archive.ubuntu.com/ubuntu/ quantal main universe" >> /etc/apt/sources.list \
-    && apt-get update \
+RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y apt-utils multiarch-support libstdc++6 lib32stdc++6 tar curl iproute2 openssl \
     && useradd -d /home/container -m container
