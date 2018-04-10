@@ -10,8 +10,8 @@ RUN dpkg --add-architecture i386 \
     && apt install -y libc6 zlib1g dpkg libstdc++6 lib32stdc++6 tar curl iproute2 \
     && useradd -d /home/container -m container
 
-RUN curl http://snapshot.debian.org/archive/debian/20110406T213352Z/pool/main/o/openssl098/libssl0.9.8_0.9.8o-7_i386.deb \
-    && dpkg --install libssl0.9.8_0.9.8o-7_i386.deb \
+RUN curl -O http://snapshot.debian.org/archive/debian/20110406T213352Z/pool/main/o/openssl098/libssl0.9.8_0.9.8o-7_i386.deb \
+    && dpkg --force-depends --install libssl0.9.8_0.9.8o-7_i386.deb \
     && rm libssl0.9.8_0.9.8o-7_i386.deb \
     && ln -s /usr/lib/libssl.so.0.9.8 /usr/lib/x86_64-linux-gnu/libssl.so.0.9.8
 
