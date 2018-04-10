@@ -1,12 +1,12 @@
 # Based on: https://github.com/parkervcp/images/tree/samp
 
-FROM debian:wheezy
+FROM debian:latest
 
 MAINTAINER Mark Vainomaa <mikroskeem@mikroskeem.eu>
 
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y libstdc++6 tar curl \
+    && apt-get install -y libstdc++6 lib32stdc++6 tar curl iproute2 openssl \
     && useradd -d /home/container -m container
 
 RUN curl -O http://snapshot.debian.org/archive/debian/20110406T213352Z/pool/main/o/openssl098/libssl0.9.8_0.9.8o-7_amd64.deb \
