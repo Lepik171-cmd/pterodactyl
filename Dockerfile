@@ -4,13 +4,13 @@ FROM debian:latest
 
 MAINTAINER Gerry-Rego Lepik <gerry@gerry.ee>
 
-RUN apt-get update \
+RUN deb [arch=amd64,i386] http://uk.archive.ubuntu.com/ubuntu/ quantal main universe \
+    && apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y apt-utils multiarch-support libstdc++6 lib32stdc++6 tar curl iproute2 openssl \
     && useradd -d /home/container -m container
 
-RUN deb [arch=amd64,i386] http://uk.archive.ubuntu.com/ubuntu/ quantal main universe \
-    && curl -O http://snapshot.debian.org/archive/debian/20110406T213352Z/pool/main/o/openssl098/libssl0.9.8_0.9.8o-7_i386.deb \
+RUN curl -O http://snapshot.debian.org/archive/debian/20110406T213352Z/pool/main/o/openssl098/libssl0.9.8_0.9.8o-7_i386.deb \
     && dpkg -i libssl0.9.8_0.9.8o-7_i386.deb \
     && rm libssl0.9.8_0.9.8o-7_i386.deb
 
