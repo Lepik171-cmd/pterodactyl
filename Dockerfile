@@ -11,7 +11,7 @@ RUN dpkg --add-architecture i386 \
     && useradd -d /home/container -m container
 
 RUN curl -O http://snapshot.debian.org/archive/debian/20110406T213352Z/pool/main/o/openssl098/libssl0.9.8_0.9.8o-7_i386.deb \
-    && dpkg --install libssl0.9.8_0.9.8o-7_i386.deb \
+    && dpkg --force-architecture --install libssl0.9.8_0.9.8o-7_i386.deb \
     && rm libssl0.9.8_0.9.8o-7_i386.deb \
     && ln -s /usr/lib/libssl.so.0.9.8 /usr/lib/x86_64-linux-gnu/libssl.so.0.9.8
 
