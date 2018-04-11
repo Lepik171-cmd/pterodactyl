@@ -1,6 +1,6 @@
 # Based on: https://github.com/parkervcp/images/tree/samp
 
-FROM debian:latest
+FROM debian:9
 
 MAINTAINER Gerry-Rego Lepik <gerry@gerry.ee>
 
