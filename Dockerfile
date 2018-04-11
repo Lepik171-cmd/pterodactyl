@@ -7,7 +7,7 @@ MAINTAINER Gerry-Rego Lepik <gerry@gerry.ee>
 RUN dpkg --add-architecture i386 \
     && apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y apt-utils libc6:i386 zlib1g:i386 lib32gcc1 libstdc++6 lib32stdc++6 tar curl iproute2 openssl \
+    && apt-get install -y apt-utils mysql-client libc6:i386 zlib1g:i386 lib32gcc1 libstdc++6 lib32stdc++6 tar curl iproute2 openssl \
     && useradd -d /home/container -m container
 
 RUN curl -O http://snapshot.debian.org/archive/debian/20110406T213352Z/pool/main/o/openssl098/libssl0.9.8_0.9.8o-7_i386.deb \
