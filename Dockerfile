@@ -15,6 +15,7 @@ RUN curl -O http://snapshot.debian.org/archive/debian/20110406T213352Z/pool/main
     && rm libssl0.9.8_0.9.8o-7_i386.deb
 
 USER container
+ENV DISPLAY :0
 ENV USER=container HOME=/home/container
 
 WORKDIR /home/container
