@@ -1,6 +1,6 @@
 # Based on: https://github.com/parkervcp/images/tree/samp
 
-FROM debian:wheezy
+FROM debian:stretch
 
 MAINTAINER Gerry-Rego Lepik <gerry@gerry.ee>
 
